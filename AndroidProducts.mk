@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aosp_evert.mk
+    $(LOCAL_DIR)/lineage_evert.mk
 
 COMMON_LUNCH_CHOICES := \
-    aosp_evert-eng \
-    aosp_evert-user \
-    aosp_evert-userdebug
+    lineage_evert-eng \
+    lineage_evert-user \
+    lineage_evert-userdebug
