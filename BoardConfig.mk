@@ -39,8 +39,7 @@ TARGET_KERNEL_CONFIG := lineageos_evert_defconfig
 BOARD_KERNEL_CMDLINE += androidboot.boot_devices=soc/c0c4000.sdhci
 
 # HIDL
-DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/touch.xml
-DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/adspd.xml
+DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
