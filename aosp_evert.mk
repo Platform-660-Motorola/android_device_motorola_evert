@@ -31,46 +31,6 @@ TARGET_BOOT_ANIMATION_RES := 1080
 # GApps
 TARGET_GAPPS_ARCH := arm64
 
-# A/B updater
-AB_OTA_POSTINSTALL_CONFIG += \
-    RUN_POSTINSTALL_system=true \
-    POSTINSTALL_PATH_system=system/bin/otapreopt_script \
-    FILESYSTEM_TYPE_system=ext4 \
-    POSTINSTALL_OPTIONAL_system=true
-
-PRODUCT_PACKAGES += \
-    otapreopt_script \
-    update_engine \
-    update_engine_sideload \
-    update_verifier
-
-# Enable retrofit dynamic partitions
-PRODUCT_USE_DYNAMIC_PARTITIONS := true
-PRODUCT_RETROFIT_DYNAMIC_PARTITIONS := true
-
-PRODUCT_PACKAGES += \
-    check_dynamic_partitions
-
-AB_OTA_POSTINSTALL_CONFIG += \
-    RUN_POSTINSTALL_product=true \
-    POSTINSTALL_PATH_product=bin/check_dynamic_partitions \
-    FILESYSTEM_TYPE_product=ext4 \
-    POSTINSTALL_OPTIONAL_product=false
-
-# The following modules are included in debuggable builds only.
-PRODUCT_PACKAGES_DEBUG += \
-    bootctl \
-    update_engine_client
-
-# Boot control HAL
-PRODUCT_PACKAGES += \
-    android.hardware.boot@1.0-impl.recovery \
-    bootctrl.sdm660 \
-    bootctrl.sdm660.recovery
-
-# Recovery
-TARGET_RECOVERY_FSTAB := device/motorola/sdm660-common/rootdir/etc/fstab.qcom
-
 # Device identifiers
 PRODUCT_DEVICE := evert
 PRODUCT_NAME := aosp_evert
